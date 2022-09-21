@@ -11,6 +11,7 @@ trait ApiResponse
             'message' => $message,
         ], $code);
     }
+
     protected function apiError($errors, $code, $message = null)
     {
         return response()->json([
