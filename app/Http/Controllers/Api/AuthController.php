@@ -15,9 +15,8 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    //
-    use ApiResponse;
 
+    use ApiResponse;
 
     public function register(RegisterRequest $request)
     {
@@ -26,6 +25,7 @@ class AuthController extends Controller
             'name' => $validated['name'],
             'email' => $validated['email'],
             'password' => Hash::make($validated['password']),
+
         ]);
 
         $token = $user->createToken('auth_token')->plainTextToken;
